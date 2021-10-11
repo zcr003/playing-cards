@@ -28,20 +28,12 @@ public class Test {
     System.out.println(deck);
     Collections.sort(deck);
     System.out.println(deck);
-    deck.sort(new WarComparator());
+    int numRanks = Rank.values().length;
+    deck.sort((Card card1, Card card2) -> (card1.getRank().ordinal() + numRanks - 1) % numRanks
+      - ((card2.getRank().ordinal() +numRanks - 1) % numRanks));
+
     System.out.println(deck);
 
-  }
-  //This looks at two, compares them and sorts them based on likeness.
-  private static class WarComparator implements Comparator<Card> {
-
-    private final int numRanks = Rank.values().length;
-
-    @Override
-    public int compare(Card card1, Card card2) {
-      return (card1.getRank().ordinal() + numRanks - 1) % numRanks
-      - ((card2.getRank().ordinal() +numRanks - 1) % numRanks);
-    }
   }
 
 }
