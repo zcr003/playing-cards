@@ -1,0 +1,24 @@
+package edu.cnm.deepdive;
+
+import edu.cnm.deepdive.model.Card;
+import edu.cnm.deepdive.model.Rank;
+import edu.cnm.deepdive.model.Suit;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test {
+
+  /*Declaring a variable and its type is List of Cards named deck. Array list is a class that
+  implements the List interface */
+  public static void main(String[] args) {
+    List<Card> deck = new ArrayList<>();
+    //Every enum has a static method that gives you all enumerated values in an array.
+    for (Suit s : Suit.values()) {
+      for (Rank r : Rank.values()) {
+        Card c = new Card(r, s);
+        deck.add(c);
+      }
+    }
+  }
+
+}
