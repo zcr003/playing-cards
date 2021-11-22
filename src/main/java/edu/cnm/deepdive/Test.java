@@ -30,7 +30,7 @@ public class Test {
     System.out.println(deck);
     int numRanks = Rank.values().length;
     deck.sort((Card card1, Card card2) -> (card1.getRank().ordinal() + numRanks - 1) % numRanks
-      - ((card2.getRank().ordinal() +numRanks - 1) % numRanks));
+        - ((card2.getRank().ordinal() + numRanks - 1) % numRanks));
 
     System.out.println(deck);
 
