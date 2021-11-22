@@ -23,7 +23,8 @@ public class Trick {
     sortCards(deck, redPile, blackPile);
     swapCards(redPile, blackPile, rng);
 
-    // TODO Sort the piles
+    Collections.sort(redPile);
+    Collections.sort(blackPile);
     // TODO Count & print the pile contents.
 
   }
