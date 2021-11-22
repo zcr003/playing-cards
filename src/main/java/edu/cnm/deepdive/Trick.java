@@ -20,8 +20,8 @@ public class Trick {
 
     List<Card> redPile = new ArrayList<>();
     List<Card> blackPile = new ArrayList<>();
-   sortCards(deck, redPile, blackPile);
-    // TODO Swap a random number of cards between the 2 piles; take from the smaller of the 2 piles.
+    sortCards(deck, redPile, blackPile);
+
     // TODO Sort the piles
     // TODO Count & print the pile contents.
 
@@ -50,5 +50,14 @@ public class Trick {
       }
     }
   }
+
+  private static void swapCards(List<Card> redPile, List<Card> blackPile, Random rng) {
+    int numToSwap = rng.nextInt(Math.min(redPile.size(), blackPile.size()) + 1);
+    for (int i = 0; i < numToSwap; i++) {
+      blackPile.add(redPile.remove(0));
+      redPile.add(blackPile.remove(0));
+    }
+  }
+
 
 }
