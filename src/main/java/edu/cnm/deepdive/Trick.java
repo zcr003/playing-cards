@@ -21,6 +21,7 @@ public class Trick {
     List<Card> redPile = new ArrayList<>();
     List<Card> blackPile = new ArrayList<>();
     sortCards(deck, redPile, blackPile);
+    swapCards(redPile, blackPile, rng);
 
     // TODO Sort the piles
     // TODO Count & print the pile contents.
